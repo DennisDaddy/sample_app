@@ -13,8 +13,8 @@
 <%= link_to "sample app", '#', id: "logo" %>
 <nav>
 <ul class="nav navbar-nav navbar-right">
-<li><%= link_to "Home",'#' %></li>
-<li><%= link_to "Help",'#' %></li>
+<li><%= link_to "Home",root_path %></li>
+<li><%= link_to "Help",help_path %></li>
 <li><%= link_to "Log in", '#' %></li>
 </ul>
 </nav>
@@ -31,9 +31,8 @@ by <a href="http://www.michaelhartl.com/">Michael Hartl</a>
 </small>
 <nav>
 <ul>
-<li><%= link_to "About",
-'#' %></li>
-<li><%= link_to "Contact", '#' %></li>
+<li><%= link_to "About",about_path %></li>
+<li><%= link_to "Contact", contact_path %></li>
 <li><a href="http://news.railstutorial.org/">News</a></li>
 </ul>
 </nav>
