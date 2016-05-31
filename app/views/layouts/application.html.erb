@@ -2,10 +2,12 @@
 <html>
 <head>
 <title><%=full_title(yield(:title)) %></title>
+
 <%= stylesheet_link_tag 'application', media: 'all','data-turbolinks-track' => true %>
 <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 
 <%= csrf_meta_tags %>
+
 </head>
 <body>
 <header class="navbar navbar-fixed-top navbar-inverse">
@@ -13,7 +15,7 @@
 <%= link_to "sample app", root_path, id: "logo" %>
 <nav>
 <ul class="nav navbar-nav navbar-right">
-<li><%= link_to "Home",root_path %></li>
+<li><%= link_to "Home", root_path %></li>
 <li><%= link_to "Help", help_path %></li>
 <li><%= link_to "Log in", '#' %></li>
 </ul>
@@ -31,7 +33,7 @@ by <a href="http://www.michaelhartl.com/">Michael Hartl</a>
 <nav>
 <ul>
 ul>
-<li><%= link_to "About",about_path %></li>
+<li><%= link_to "About", about_path %></li>
 <li><%= link_to "Contact", contact_path %></li>
 <li><a href="http://news.railstutorial.org/">News</a></li>
 </ul>
