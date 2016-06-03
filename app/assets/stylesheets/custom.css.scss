@@ -8,6 +8,23 @@ $gray-medium-light:#eaeaea;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing:border-box;
 	box-sizing: border-box;
+	}
+
+/* forms */
+#error_explanation{
+	color:red;
+	ul{
+	color:red;
+	margin:0 0 30px 0;
+	}
+}
+
+.field_with_errors{
+	@extend .has-error;
+	.form-control{
+	color:$state-danger-text;
+	}
+}
 
 /*miscellanous */
 .debug_dump{
@@ -40,6 +57,20 @@ aside{
 
 }
 
+/* form */
+
+input,textarea,select,.uneditable-input{
+	border: 1px solid #bbb;
+    width: 100%;
+    margin-bottom: 15px;
+    @include box_sizing;
+}
+
+
+input{
+	height:auto !important;
+}
+
     .gravatar {
     float: left;
     margin-right: 10px;
@@ -51,6 +82,7 @@ aside{
 body {
 padding-top: 60px;
 }
+
 section {
 overflow: auto;
 }
@@ -86,6 +118,7 @@ p {
 font-size: 1.1em;
 line-height: 1.7em;
 }
+
 /* header */
 #logo {
 float: left;
@@ -97,6 +130,7 @@ letter-spacing: -1px;
 padding-top: 9px;
 font-weight: bold;
 }
+
 
 #logo:hover {
 color: #fff;
@@ -128,5 +162,4 @@ list-style: none;
 footer ul li {
 float: left;
 margin-left: 15px;
-}
 }
