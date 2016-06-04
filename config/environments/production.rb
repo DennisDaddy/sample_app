@@ -11,6 +11,8 @@ Rails.application.configure do
   config.eager_load = true
 
   # Full error reports are disabled and caching is turned on.
+  config.force_ssl=true
+  
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
 
