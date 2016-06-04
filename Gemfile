@@ -45,6 +45,7 @@ group :development, :test do
   
   gem 'spring'
   gem 'guard'
+  gem 'rails-controller-testing'
 end
 group :test do
 	gem 'minitest-reporters'
