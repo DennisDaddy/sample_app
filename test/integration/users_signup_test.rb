@@ -25,6 +25,6 @@ password:
 "password",
 password_confirmation: "password" }
 end
-assert_template 'users/show'
 end
+assert_template 'users/show'
 end
