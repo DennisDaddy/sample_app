@@ -16,7 +16,7 @@ end
 
 
 test "name should be present" do
-@user.name = ""
+@user.name = "  "
 assert_not @user.valid?
 end
 
