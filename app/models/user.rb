@@ -37,6 +37,14 @@ def forget
 	
 end
 
+def feed
+	Micropost.where("user_id = ?", id)
+	
+end
+
+private
+
+
 end
 
 
