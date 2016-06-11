@@ -3,6 +3,10 @@ source 'https://rubygems.org'
 
 
 gem 'faker'
+gem 'fog'
+gem 'carrierwave'
+gem 'mini_magick'
+
 
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
