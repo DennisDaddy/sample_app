@@ -17,9 +17,10 @@ class SessionsController < ApplicationController
       
   	else
   		flash.now[:danger] = 'Invalid email/password combination'
-  		render 'new'
+  		
   		
   	end
+
 
   def destroy
     log_out if logged_in?
