@@ -9,16 +9,16 @@ class User < ApplicationRecord
 	has_many :following, through: :active_relationships, source: :followed
 	before_save { self.email = email.downcase }
 	has_many :passive_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
-has_many :following, through: :active_relationships, source: :followed
-has_many :followers, through: :passive_relationships, source: :follower
+    has_many :following, through: :active_relationships, source: :followed
+    has_many :followers, through: :passive_relationships, source: :follower
 	validates :name, presence: true, length: { maximum: 50 }
-VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-validates :email, presence: true, length: { maximum: 255 },
-format: { with: VALID_EMAIL_REGEX },
-uniqueness: { case_sensitive: false }
+   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+   validates :email, presence: true, length: { maximum: 255 },
+   format: { with: VALID_EMAIL_REGEX },
+   uniqueness: { case_sensitive: false }
 
-has_secure_password
-validates :password, length: { minimum: 6 },allow_blank:true
+  has_secure_password
+  validates :password, length: { minimum: 6 },allow_blank:true
 
 def User.digest(string)
 	cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST:
@@ -48,13 +48,15 @@ def authenticated?(attribute, token)
 	BCrypt::Password.new(digest).is_password?(token)
 end
 
-def forget
+def forget 
 	update_attribute(:remember_digest, nil)
 	
 end
 
+#Returns the status feed
 def feed
-	Micropost.where("user_id = ?", id)
+	following_ids = "SELECT followed_id FROM relationships WHERE follower_id = :user_id"
+Micropost.where("user_id IN (#{following_ids}) OR user_id = :user_id", user_id: id)
 	
 end
 
